@@ -1,5 +1,5 @@
 {
-  "name": "@kibibit/kb-plex-api-client",
+  "name": "@kibibit/<kb-server-client-template>",
   "version": "0.0.0-development",
   "description": "plex.tv api client for node.js & browser using axios",
   "types": "lib/kb-plex-api-client.d.ts",
