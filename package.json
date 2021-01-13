@@ -1,12 +1,9 @@
 {
   "name": "@kibibit/<kb-server-client-template>",
   "version": "0.0.0-development",
-  "description": "plex.tv api client for node.js & browser using axios",
-  "types": "lib/kb-plex-api-client.d.ts",
-  "main": "lib/kb-plex-api-client.js",
-  "files": [
-    "/lib"
-  ],
+  "description": "<DESCRIPTION>",
+  "types": "dist/<kb-server-client-template>.d.ts",
+  "main": "dist/<kb-server-client-template>.js",
   "scripts": {
     "build": "tsc",
     "generate-barrels": "barrelsby --delete -d ./src -l below -q",
@@ -36,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kibibit/kb-plex-api-client.git"
+    "url": "https://github.com/Kibibit/<kb-server-client-template>.git"
   },
   "dependencies": {
     "axios": "^0.21.1"
