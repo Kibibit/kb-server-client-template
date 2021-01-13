@@ -17,9 +17,26 @@ const readmeFile = {
   to: projectName,
 };
 
+const packageFile = {
+  files: './package.json',
+  from: /<kb-server-client-template>/g,
+  to: projectName,
+};
+
+const packageLockFile = {
+  files: './package-lock.json',
+  from: /<kb-server-client-template>/g,
+  to: projectName,
+};
+
+
+
 (async () => {
   try {
-    const results = await replace(readmeFile)
+    let results = [];
+    results.push(await replace(readmeFile));
+    results.push(await replace(packageFile));
+    results.push(await replace(packageLockFile));
     console.log('Replacement results:', results);
   }
   catch (error) {
