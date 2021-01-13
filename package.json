@@ -5,7 +5,7 @@
   "types": "dist/<kb-server-client-template>.d.ts",
   "main": "dist/<kb-server-client-template>.js",
   "scripts": {
-    "build": "npm run build:client && npm run build:server",
+    "build": "npm run build:server && npm run build:client",
     "build:client": "cd ./client && npm run build",
     "build:server": "cd ./server && npm run build",
     "start:client": "cd ./client && npm run start",
@@ -48,7 +48,8 @@
     "@nestjs/platform-express": "^7.5.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.3"
+    "rxjs": "^6.6.3",
+    "@kibibit/consologo": "^1.1.1"
   },
   "config": {
     "commitizen": {

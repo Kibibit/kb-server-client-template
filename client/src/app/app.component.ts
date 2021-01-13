@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { consoleLogo } from '@kibibit/consologo';
+import { webConsolelogo } from '@kibibit/consologo';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'kibibit client';
 
   constructor() {
-    consoleLogo('kibibit client', 'noice!');
+    webConsolelogo('kibibit client', 'noice!');
   }
 }
