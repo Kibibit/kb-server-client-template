@@ -10,6 +10,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 RUN wget https://raw.githubusercontent.com/zakaziko99/agnosterzak-ohmyzsh-theme/master/agnosterzak.zsh-theme -P /home/node/.oh-my-zsh/themes
 RUN sed -i 's/ZSH\_THEME\=\".*\"/ZSH_THEME\=\"agnosterzak\"/' /home/node/.zshrc
+RUN echo "git config --global core.editor \"code --wait\"" >> /home/node/.zshrc
 
 # [Optional] Uncomment if you want to install an additional version of node using nvm
 # ARG EXTRA_NODE_VERSION=10
