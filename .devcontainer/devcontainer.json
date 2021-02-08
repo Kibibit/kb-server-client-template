@@ -22,7 +22,10 @@
 		"coenraads.bracket-pair-colorizer",
 		"orta.vscode-jest",
 		"wix.vscode-import-cost",
-		"actboy168.tasks"
+		"actboy168.tasks",
+		"johnpapa.vscode-peacock",
+		"angular.ng-template",
+		"abhijoybasak.nestjs-files"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
