@@ -49,7 +49,12 @@
       "path": "server/",
       "problemMatcher": [],
       "label": "TESTS: Server Unit-tests and Coverage",
-      "detail": "Run Server unit-tests"
+      "detail": "Run Server unit-tests",
+      "options": {
+        "statusbar": {
+          "color" : "#FFDD57"
+        }
+      }
     },
     {
       "type": "npm",
@@ -57,7 +62,12 @@
       "path": "server/",
       "problemMatcher": [],
       "label": "TESTS: API-tests",
-      "detail": "Run API Tests (server e2e)"
+      "detail": "Run API Tests (server e2e)",
+      "options": {
+        "statusbar": {
+          "color" : "#FFDD57"
+        }
+      }
     },
     {
       "type": "npm",
@@ -65,7 +75,12 @@
       "path": "client/",
       "problemMatcher": [],
       "label": "TESTS: E2E-tests",
-      "detail": "Run E2E tests (client e2e. includes HTML interaction)"
+      "detail": "Run E2E tests (client e2e. includes HTML interaction)",
+      "options": {
+        "statusbar": {
+          "color" : "#FFDD57"
+        }
+      }
     }
   ]
 }
