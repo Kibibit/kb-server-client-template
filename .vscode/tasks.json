@@ -1,48 +1,38 @@
 {
-	"version": "2.0.0",
-	"tasks": [
+  "version": "2.0.0",
+  "tasks": [
     {
-      "label": "Start Full Dev",
-      "detail": "Start both server & client",
+      "label": "dev:start",
+      "detail": "Start both server & client for development",
       "dependsOn": [
-        "START DEV SERVER",
-        "START DEV CLIENT"
+        "dev:server",
+        "dev:client-proxy"
       ],
       "problemMatcher": []
     },
     {
+      "label": "dev:client-proxy",
+      "detail": "client in proxy\\watch mode",
       "type": "npm",
       "script": "start:proxy",
       "path": "client/",
       "problemMatcher": [],
-      "label": "dev:client-proxy",
-      "detail": "ng serve --port 10101 --proxy-config ./proxy.conf.json",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
         "group": "devwatch"
-      },
-      "options": {
-        "statusbar": {
-          "color" : "#22C1D6"
-        }
       }
     },
     {
+      "label": "dev:server",
+      "detail": "server in watch mode",
       "type": "npm",
       "script": "start:server",
       "problemMatcher": [],
-      "label": "dev:server",
-      "detail": "cd ./server && npm run start:dev",
       "presentation": {
         "reveal": "always",
         "panel": "shared",
         "group": "devwatch"
-      },
-      "options": {
-        "statusbar": {
-          "color" : "#22C1D6"
-        }
       }
     }
   ]
