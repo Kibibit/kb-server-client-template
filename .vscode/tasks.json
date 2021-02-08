@@ -48,8 +48,16 @@
       "script": "test:cov",
       "path": "server/",
       "problemMatcher": [],
-      "label": "Unit-tests and Coverage",
+      "label": "SERVER: Unit-tests and Coverage",
       "detail": "Run Server unit-tests"
+    },
+    {
+      "type": "npm",
+      "script": "test:e2e",
+      "path": "server/",
+      "problemMatcher": [],
+      "label": "SERVER: API-tests",
+      "detail": "jest --config ./test/jest-e2e.json"
     }
   ]
 }
