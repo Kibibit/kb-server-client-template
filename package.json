@@ -1,5 +1,5 @@
 {
-  "name": "@kibibit/<kb-server-client-template>",
+  "name": "@kibibit/kb-server-client-template",
   "version": "0.0.0-development",
   "description": "<DESCRIPTION>",
   "types": "dist/<kb-server-client-template>.d.ts",
@@ -43,14 +43,15 @@
     "url": "https://github.com/Kibibit/<kb-server-client-template>.git"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "@kibibit/consologo": "^1.2.0",
     "@nestjs/common": "^7.6.11",
     "@nestjs/core": "^7.6.11",
     "@nestjs/platform-express": "^7.6.11",
+    "axios": "^0.21.1",
+    "find-root": "^1.1.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.3",
-    "@kibibit/consologo": "^1.2.0"
+    "rxjs": "^6.6.3"
   },
   "config": {
     "commitizen": {

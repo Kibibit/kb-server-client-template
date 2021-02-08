@@ -6,11 +6,12 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
+  appRoot = join(__dirname, '../../');
   constructor(private readonly appService: AppService) {}
 
   @Get()
   sendApplication(@Res() res: Response): void {
-    res.sendFile(join(__dirname, '../client/index.html'));
+    res.sendFile(join(this.appRoot, 'dist/client/index.html'));
   }
 
   @Get('/api')
