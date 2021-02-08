@@ -8,7 +8,12 @@
         "dev:server",
         "dev:client-proxy"
       ],
-      "problemMatcher": []
+      "problemMatcher": [],
+      "options": {
+        "statusbar": {
+          "color" : "#35AC5E"
+        }
+      }
     },
     {
       "label": "dev:client-proxy",
@@ -21,6 +26,11 @@
         "reveal": "always",
         "panel": "shared",
         "group": "devwatch"
+      },
+      "options": {
+        "statusbar": {
+          "color" : "#35AC5E"
+        }
       }
     },
     {
@@ -33,6 +43,11 @@
         "reveal": "always",
         "panel": "shared",
         "group": "devwatch"
+      },
+      "options": {
+        "statusbar": {
+          "color" : "#35AC5E"
+        }
       }
     },
     {
@@ -41,7 +56,12 @@
       "group": "build",
       "problemMatcher": [],
       "label": "Build Production",
-      "detail": "Will build both Server & Client. Output in ./dist/"
+      "detail": "Will build both Server & Client. Output in ./dist/",
+      "options": {
+        "statusbar": {
+          "color" : "#209CEE"
+        }
+      }
     },
     {
       "type": "npm",
