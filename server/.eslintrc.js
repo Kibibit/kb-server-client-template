@@ -16,8 +16,9 @@ module.exports = {
     jest: true,
   },
   rules: {
-    "eol-last": [2, "windows"],
-    "comma-dangle": ["error", "never"],
+    'eol-last': [ 2, 'windows' ],
+    'comma-dangle': [ 'error', 'never' ],
+    'max-len': [ 'error', { 'code': 80, "ignoreComments": true } ],
     '@typescript-eslint/no-empty-interface': 'error',
     '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',

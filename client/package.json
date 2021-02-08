@@ -8,6 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:fix": "ng lint client --fix",
     "lint:html": "prettyhtml ./src/**/*.html --tab-width 2 --print-width 80 --wrapAttributes true --sortAttributes",
     "e2e": "ng e2e"
   },

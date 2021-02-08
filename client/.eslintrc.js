@@ -22,6 +22,9 @@ module.exports = {
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
+        'eol-last': [ 2, 'windows' ],
+        'comma-dangle': [ 'error', 'never' ],
+        'max-len': [ 'error', { 'code': 80, "ignoreComments": true } ],
         "@angular-eslint/component-selector": [
           "error",
           {

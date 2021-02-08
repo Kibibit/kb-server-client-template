@@ -28,6 +28,9 @@
   ],
   "typescriptHero.imports.organizeOnSave": true,
   "typescriptHero.imports.multiLineTrailingComma": false,
+  "typescriptHero.imports.multiLineWrapThreshold": 80,
+  "typescriptHero.imports.insertSpaceBeforeAndAfterImportBraces": true,
+  "typescriptHero.imports.insertSemicolons": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
   },

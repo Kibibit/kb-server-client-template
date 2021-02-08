@@ -42,6 +42,9 @@
     ],
     "typescriptHero.imports.organizeOnSave": true,
     "typescriptHero.imports.multiLineTrailingComma": false,
+    "typescriptHero.imports.multiLineWrapThreshold": 80,
+    "typescriptHero.imports.insertSpaceBeforeAndAfterImportBraces": true,
+    "typescriptHero.imports.insertSemicolons": true,
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true,
     },
@@ -64,7 +67,8 @@
 		"johnpapa.vscode-peacock",
 		"angular.ng-template",
 		"abhijoybasak.nestjs-files",
-		"eamodio.gitlens"
+		"eamodio.gitlens",
+		"codeandstuff.package-json-upgrade"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
