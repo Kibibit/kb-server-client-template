@@ -8,7 +8,7 @@ import { KbNotFoundExceptionFilter } from './kb-not-found-exception.filter';
 
 async function bootstrap() {
   terminalConsoleLogo('kibibit server template', [
-    'change this in server/src/main.ts',
+    'change this in server/src/main.ts'
   ]);
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalFilters(new KbNotFoundExceptionFilter());

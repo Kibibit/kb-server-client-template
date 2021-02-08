@@ -1,4 +1,9 @@
-import { ArgumentsHost, Catch, ExceptionFilter, NotFoundException } from '@nestjs/common';
+import {
+  ArgumentsHost,
+  Catch,
+  ExceptionFilter,
+  NotFoundException
+} from '@nestjs/common';
 import { resolve } from 'path';
 
 @Catch(NotFoundException)
@@ -13,7 +18,7 @@ export class KbNotFoundExceptionFilter implements ExceptionFilter {
       response.status(exception.getStatus()).json({
         statusCode: exception.getStatus(),
         name: exception.name,
-        error: exception.message,
+        error: exception.message
       });
 
       return;
