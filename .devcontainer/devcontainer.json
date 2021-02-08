@@ -21,11 +21,14 @@
 		"rbbit.typescript-hero",
 		"coenraads.bracket-pair-colorizer",
 		"orta.vscode-jest",
-		"wix.vscode-import-cost"
+		"wix.vscode-import-cost",
+		"actboy168.tasks"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [
+    10101, 10102
+  ],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",

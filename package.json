@@ -29,6 +29,7 @@
     "all-contributors-cli": "^6.19.0",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
+    "cz-conventional-changelog-emoji": "^0.1.0",
     "eslint": "^7.17.0",
     "husky": "^4.3.7",
     "replace-in-file": "^6.1.0",
@@ -53,7 +54,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/cz-conventional-changelog-emoji"
     }
   },
   "husky": {

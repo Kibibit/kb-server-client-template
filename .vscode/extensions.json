@@ -4,6 +4,7 @@
     "coenraads.bracket-pair-colorizer",
     "wix.vscode-import-cost",
     "orta.vscode-jest",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "actboy168.tasks"
   ]
 }
