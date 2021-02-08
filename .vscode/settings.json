@@ -29,7 +29,12 @@
   "typescriptHero.imports.organizeOnSave": true,
   "typescriptHero.imports.multiLineTrailingComma": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": false
+    "source.fixAll.eslint": true,
   },
-  "vsicons.presets.angular": true
+  "eslint.format.enable": true,
+  "vsicons.presets.angular": true,
+  "eslint.workingDirectories": [
+    "client/",
+    "server/"
+  ]
 }

@@ -13,7 +13,7 @@ export class KbNotFoundExceptionFilter implements ExceptionFilter {
       response.status(exception.getStatus()).json({
         statusCode: exception.getStatus(),
         name: exception.name,
-        error: exception.message
+        error: exception.message,
       });
 
       return;

@@ -1,4 +1,4 @@
-{
+module.exports = {
   "root": true,
   "ignorePatterns": [
     "projects/**/*"
@@ -13,6 +13,7 @@
           "tsconfig.json",
           "e2e/tsconfig.json"
         ],
+        "tsconfigRootDir": __dirname,
         "createDefaultProgram": true
       },
       "extends": [
@@ -49,4 +50,4 @@
       "rules": {}
     }
   ]
-}
+};

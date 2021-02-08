@@ -9,7 +9,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  sendApplication(@Res() res: Response) {
+  sendApplication(@Res() res: Response): void {
     res.sendFile(join(__dirname, '../client/index.html'));
   }
 
