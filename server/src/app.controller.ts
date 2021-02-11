@@ -10,12 +10,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  sendApplication(@Res() res: Response): void {
+  sendWebClient(@Res() res: Response): void {
     res.sendFile(join(this.appRoot, 'dist/client/index.html'));
-  }
-
-  @Get('/api')
-  getHello(): string {
-    return this.appService.getHello();
   }
 }
