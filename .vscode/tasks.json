@@ -11,7 +11,7 @@
       "problemMatcher": [],
       "options": {
         "statusbar": {
-          "color" : "#35AC5E"
+          "color": "#35AC5E"
         }
       }
     },
@@ -29,7 +29,7 @@
       },
       "options": {
         "statusbar": {
-          "color" : "#35AC5E"
+          "color": "#35AC5E"
         }
       }
     },
@@ -46,7 +46,7 @@
       },
       "options": {
         "statusbar": {
-          "color" : "#35AC5E"
+          "color": "#35AC5E"
         }
       }
     },
@@ -59,7 +59,7 @@
       "detail": "Will build both Server & Client. Output in ./dist/",
       "options": {
         "statusbar": {
-          "color" : "#209CEE"
+          "color": "#209CEE"
         }
       }
     },
@@ -72,7 +72,7 @@
       "detail": "Run Server unit-tests",
       "options": {
         "statusbar": {
-          "color" : "#FFDD57"
+          "color": "#FFDD57"
         }
       }
     },
@@ -85,7 +85,7 @@
       "detail": "Run API Tests (server e2e)",
       "options": {
         "statusbar": {
-          "color" : "#FFDD57"
+          "color": "#FFDD57"
         }
       }
     },
@@ -98,7 +98,22 @@
       "detail": "Run E2E tests (client e2e. includes HTML interaction)",
       "options": {
         "statusbar": {
-          "color" : "#FFDD57"
+          "color": "#FFDD57"
+        }
+      }
+    },
+    {
+      "type": "npm",
+      "script": "test:cov",
+      "path": "client/",
+      "group": "test",
+      "label": "TEST: Client Unit-tests and Coverage",
+      "detail": "Run client unit-tests",
+      "isBackground": true,
+      "problemMatcher": "$karma-jasmine2",
+      "options": {
+        "statusbar": {
+          "color": "#FFDD57"
         }
       }
     }
