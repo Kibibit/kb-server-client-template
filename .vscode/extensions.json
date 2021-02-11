@@ -10,6 +10,8 @@
     "angular.ng-template",
     "abhijoybasak.nestjs-files",
     "eamodio.gitlens",
-    "codeandstuff.package-json-upgrade"
+    "codeandstuff.package-json-upgrade",
+    "mongodb.mongodb-vscode",
+    "ms-azuretools.vscode-docker"
   ]
 }

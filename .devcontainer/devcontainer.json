@@ -2,14 +2,9 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.158.0/containers/typescript-node
 {
 	"name": "Node.js & TypeScript",
-	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick a Node version: 10, 12, 14
-		"args": { 
-			"VARIANT": "14"
-		}
-	},
-
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+	"workspaceFolder": "/workspace",
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/zsh",
@@ -68,12 +63,16 @@
 		"angular.ng-template",
 		"abhijoybasak.nestjs-files",
 		"eamodio.gitlens",
-		"codeandstuff.package-json-upgrade"
+		"codeandstuff.package-json-upgrade",
+		"mongodb.mongodb-vscode",
+		"ms-azuretools.vscode-docker"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-    10101, 10102
+    10101, // dev client
+    10102, // dev server
+    27017 // mongodb instance
   ],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
