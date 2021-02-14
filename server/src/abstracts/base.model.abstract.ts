@@ -14,13 +14,13 @@ export abstract class BaseModel {
   @Transform(({ value }) => value && value.toString())
   // tslint:disable-next-line: variable-name
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  _id: any;
+  _id?: any;
 
   id?: string; // is actually model._id getter
 
   // tslint:disable-next-line: variable-name
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  _v: any;
+  _v?: any;
 
   // add more to a base model if you want.
 

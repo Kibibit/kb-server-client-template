@@ -5,12 +5,16 @@
   "types": "dist/<kb-server-client-template>.d.ts",
   "main": "dist/<kb-server-client-template>.js",
   "scripts": {
-    "build": "npm run build:server && npm run build:client",
+    "install": "npm run install:server && npm run install:client",
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "build": "npm run build:server && npm run build:client && build:copy-extras",
     "build:client": "cd ./client && npm run build",
     "build:server": "cd ./server && npm run build",
+    "build:copy-extras": "ncp extras/ dist/extras",
     "start:client": "cd ./client && npm run start",
     "start:server": "cd ./server && npm run start:dev",
-    "init": "node ./setup/replace-template-string.js",
+    "init": "node ./tools/replace-template-string.js",
     "generate-barrels": "barrelsby --delete -d ./src -l below -q",
     "semantic-release:setup": "semantic-release-cli setup",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
@@ -33,6 +37,7 @@
     "cz-conventional-changelog-emoji": "^0.1.0",
     "eslint": "^7.19.0",
     "husky": "^4.3.8",
+    "ncp": "^2.0.0",
     "replace-in-file": "^6.2.0",
     "semantic-release": "^17.3.8",
     "semantic-release-cli": "^5.4.3",
@@ -43,6 +48,9 @@
     "type": "git",
     "url": "https://github.com/Kibibit/<kb-server-client-template>.git"
   },
+  "bugs": {
+    "url": "https://github.com/Kibibit/<kb-server-client-template>/issues"
+  },
   "dependencies": {
     "@kibibit/consologo": "^1.2.0",
     "@kibibit/kb-error": "^1.0.3",
@@ -50,15 +58,19 @@
     "@nestjs/core": "^7.6.11",
     "@nestjs/mongoose": "^7.2.3",
     "@nestjs/platform-express": "^7.6.11",
+    "@nestjs/swagger": "^4.7.12",
     "@typegoose/typegoose": "^7.4.8",
     "axios": "^0.21.1",
     "class-transformer": "^0.3.2",
     "class-validator": "^0.13.1",
     "find-root": "^1.1.0",
+    "fs-extra": "^9.1.0",
+    "lodash": "^4.17.20",
     "mongoose": "^5.10.18",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.3"
+    "rxjs": "^6.6.3",
+    "swagger-ui-express": "^4.1.6"
   },
   "config": {
     "commitizen": {

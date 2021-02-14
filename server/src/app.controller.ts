@@ -1,4 +1,5 @@
 import { Controller, Get, Res } from '@nestjs/common';
+import { ApiOkResponse, ApiOperation } from '@nestjs/swagger';
 import { Response } from 'express';
 import { join } from 'path';
 
@@ -10,6 +11,10 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
+  @ApiOperation({ summary: 'Get Web Client (HTML)' })
+  @ApiOkResponse({
+    description: 'Returns the Web Client\'s HTML File'
+  })
   sendWebClient(@Res() res: Response): void {
     res.sendFile(join(this.appRoot, 'dist/client/index.html'));
   }

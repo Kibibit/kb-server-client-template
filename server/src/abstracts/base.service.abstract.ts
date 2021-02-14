@@ -115,13 +115,13 @@ export abstract class BaseService<T extends BaseModel> {
     }
   }
 
-  update(item: T): QueryItem<T> {
+  update(item: Partial<T>): QueryItem<T> {
     return this.model.findByIdAndUpdate(BaseService.toObjectId(item.id), item, {
       new: true
     });
   }
 
-  async updateAsync(item: T): Promise<DocumentType<T>> {
+  async updateAsync(item: Partial<T>): Promise<DocumentType<T>> {
     try {
       return await this.update(item).exec();
     } catch (e) {
