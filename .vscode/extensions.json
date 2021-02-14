@@ -12,6 +12,7 @@
     "eamodio.gitlens",
     "codeandstuff.package-json-upgrade",
     "mongodb.mongodb-vscode",
-    "ms-azuretools.vscode-docker"
+    "ms-azuretools.vscode-docker",
+    "jock.svg"
   ]
 }

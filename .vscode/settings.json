@@ -39,5 +39,6 @@
   "eslint.workingDirectories": [
     "client/",
     "server/"
-  ]
+  ],
+  "svg.preview.background": "black"
 }
