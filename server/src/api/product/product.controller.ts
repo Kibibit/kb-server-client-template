@@ -7,16 +7,17 @@ import {
   UseFilters
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { GetAll } from 'src/decorators/get-all.decorator';
-import { GetOne } from 'src/decorators/get-one.decorator';
-import { KbDelete } from 'src/decorators/kb-delete.decorator';
-import { KbPatch } from 'src/decorators/kb-patch.decorator';
-import { KbPost } from 'src/decorators/kb-post.decorator';
-import { KbPut } from 'src/decorators/kb-put.decorator';
+
 import {
-  KbValidationExceptionFilter
-} from 'src/kb-validation-exception.filter';
-import { Product } from 'src/models/product.model';
+  GetAll,
+  GetOne,
+  KbDelete,
+  KbPatch,
+  KbPost,
+  KbPut
+} from '@kb-decorators';
+import { KbValidationExceptionFilter } from '@kb-filters';
+import { Product } from '@kb-models';
 
 import { ProductService } from './product.service';
 

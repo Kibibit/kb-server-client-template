@@ -5,9 +5,8 @@ import {
   UseInterceptors
 } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOperation } from '@nestjs/swagger';
-import {
-  KbApiValidateErrorResponse
-} from 'src/kb-api-validation-error-response.decorator';
+
+import { KbApiValidateErrorResponse } from '@kb-decorators';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function KbPost(type: any, path?: string | string[]) {

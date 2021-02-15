@@ -4,7 +4,7 @@ import { readJSON } from 'fs-extra';
 import { chain } from 'lodash';
 import { join } from 'path';
 
-import { ApiInfo } from '../models/api.model';
+import { ApiInfo } from '@kb-models';
 
 @Controller('api')
 export class ApiController {

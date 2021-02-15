@@ -10,9 +10,8 @@ import {
   ApiOkResponse,
   ApiOperation
 } from '@nestjs/swagger';
-import {
-  KbApiValidateErrorResponse
-} from 'src/kb-api-validation-error-response.decorator';
+
+import { KbApiValidateErrorResponse } from '@kb-decorators';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function KbPut(type: any, path?: string | string[]) {
@@ -26,7 +25,7 @@ export function KbPut(type: any, path?: string | string[]) {
     ApiNotFoundResponse({
       description: `${ type.name } not found`
     }),
-    ApiBadRequestResponse({ description: `Invalid identifier supplied` }),
+    ApiBadRequestResponse({ description: 'Invalid identifier supplied' }),
     KbApiValidateErrorResponse(),
     UseInterceptors(ClassSerializerInterceptor)
   );

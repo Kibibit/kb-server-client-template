@@ -4,8 +4,9 @@ import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 
+import { KbNotFoundExceptionFilter } from '@kb-filters';
+
 import { AppModule } from './app.module';
-import { KbNotFoundExceptionFilter } from './kb-not-found-exception.filter';
 import { Swagger } from './swagger';
 
 export async function bootstrap(): Promise<NestExpressApplication> {
