@@ -15,7 +15,9 @@ export class PublicError {
   @ApiProperty()
   name: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    oneOf: [{ type: 'string' }, { type: '[string]' }]
+  })
   error: string | string[];
 
   constructor(partial: Partial<PublicError> = {}) {

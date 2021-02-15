@@ -46,7 +46,33 @@ async function bootstrap() {
   SwaggerModule.setup('api/docs', app, document, {
     customSiteTitle: `kibibit - API documentation`,
     customCss,
-    customJs: '//kibibit.io/kibibit-assets/swagger/swagger.js'
+    customJs: '//kibibit.io/kibibit-assets/swagger/swagger.js',
+    swaggerOptions: {
+      docExpansion: 'none',
+      apisSorter: "alpha", // can also be a function
+      operationsSorter: (a, b) => {
+        const methodsOrder = [
+          "get",
+          "post",
+          "put",
+          "patch",
+          "delete",
+          "options",
+          "trace"
+        ];
+        let result =
+          methodsOrder.indexOf( a.get("method") ) -
+          methodsOrder.indexOf( b.get("method") );
+        // Or if you want to sort the methods alphabetically (delete, get, head, options, ...):
+        // var result = a.get("method").localeCompare(b.get("method"));
+  
+        if (result === 0) {
+          result = a.get("path").localeCompare(b.get("path"));
+        }
+  
+        return result;
+      }
+    }
   });
 
   await app.listen(10102);
