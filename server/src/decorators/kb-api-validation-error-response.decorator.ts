@@ -1,7 +1,7 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiResponse } from '@nestjs/swagger';
 
-import { PublicError } from '../models/public-error.model';
+import { PublicError } from '@kb-models';
 
 export const KbApiValidateErrorResponse = () => {
   return applyDecorators(

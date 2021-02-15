@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "npm run generate-barrels && nest build",
+    "build": "nest build",
     "generate-barrels": "barrelsby --delete -d ./src -l below -q --exclude spec.ts",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -64,6 +64,14 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../../coverage/server",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@kb-server$": "<rootDir>",
+      "^@kb-models$": "<rootDir>/models/index",
+      "^@kb-abstracts$": "<rootDir>/abstracts/index",
+      "^@kb-decorators$": "<rootDir>/decorators/index",
+      "^@kb-filters$": "<rootDir>/filters/index",
+      "^@kb-api$": "<rootDir>/api/index"
+    }
   }
 }

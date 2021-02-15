@@ -5,5 +5,13 @@
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^@kb-server$": "<rootDir>/../src",
+    "^@kb-models$": "<rootDir>/../src/../src/models/index",
+    "^@kb-abstracts$": "<rootDir>/../src/abstracts/index",
+    "^@kb-decorators$": "<rootDir>/../src/decorators/index",
+    "^@kb-filters$": "<rootDir>/../src/filters/index",
+    "^@kb-api$": "<rootDir>/../src/api/index"
   }
 }

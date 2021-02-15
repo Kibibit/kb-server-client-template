@@ -50,7 +50,7 @@ export class ProductController {
     this.logger.log('Full Product');
     // will log only public fields!
     this.logger.log(product);
-    // DANGER! will log everything!
+    // DANGER! WILL LOG EVERYTHING!
     console.log(product);
 
     // will only include exposed fields
