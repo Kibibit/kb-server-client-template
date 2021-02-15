@@ -13,19 +13,19 @@ if (!projectName) {
 
 const readmeFile = {
   files: './README.md',
-  from: /<kb-server-client-template>/g,
+  from: /kb-server-client-template/g,
   to: projectName,
 };
 
 const packageFile = {
   files: './package.json',
-  from: /<kb-server-client-template>/g,
+  from: /kb-server-client-template/g,
   to: projectName,
 };
 
 const packageLockFile = {
   files: './package-lock.json',
-  from: /<kb-server-client-template>/g,
+  from: /kb-server-client-template/g,
   to: projectName,
 };
 

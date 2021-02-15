@@ -2,8 +2,7 @@
   "name": "@kibibit/kb-server-client-template",
   "version": "0.0.0-development",
   "description": "<DESCRIPTION>",
-  "types": "dist/<kb-server-client-template>.d.ts",
-  "main": "dist/<kb-server-client-template>.js",
+  "main": "dist/server/main.js",
   "scripts": {
     "install": "npm run install:server && npm run install:client",
     "install:client": "cd client && npm install",
@@ -19,6 +18,10 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:server-unit": "cd server && npm run test",
+    "test:client-unit": "cd client && npm run test",
+    "test:api": "cd server && npm run test:e2e",
+    "test:e2e": "cd client && npm run test:e2e",
     "semantic-release": "semantic-release"
   },
   "author": "thatkookooguy <neilkalman@gmail.com>",
@@ -45,10 +48,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kibibit/<kb-server-client-template>.git"
+    "url": "https://github.com/Kibibit/kb-server-client-template.git"
   },
   "bugs": {
-    "url": "https://github.com/Kibibit/<kb-server-client-template>/issues"
+    "url": "https://github.com/Kibibit/kb-server-client-template/issues"
   },
   "dependencies": {
     "@kibibit/consologo": "^1.2.0",

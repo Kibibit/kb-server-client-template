@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="https://github.com/Kibibit/<kb-server-client-template>/" target="blank"><img src="http://kibibit.io/kibibit-assets/template-logo.png" width="150" alt="achievibit Logo" />
+  <a href="https://github.com/Kibibit/kb-server-client-template/" target="blank"><img src="http://kibibit.io/kibibit-assets/template-logo.png" width="150" alt="achievibit Logo" />
   </a>
   <h2 align="center">
-    @kibibit/<kb-server-client-template>
+    @kibibit/kb-server-client-template
   </h2>
 </p>
 <p align="center">
-  <a href="https://www.npmjs.com/package/@kibibit/<kb-server-client-template>"><img src="https://img.shields.io/npm/v/@kibibit/<kb-server-client-template>/latest.svg?style=for-the-badge&logo=npm&color=CB3837"></a>
+  <a href="https://www.npmjs.com/package/@kibibit/kb-server-client-template"><img src="https://img.shields.io/npm/v/@kibibit/kb-server-client-template/latest.svg?style=for-the-badge&logo=npm&color=CB3837"></a>
 </p>
 <p align="center">
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
