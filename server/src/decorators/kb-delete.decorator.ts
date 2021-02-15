@@ -22,7 +22,7 @@ export function KbDelete(type: any, path?: string | string[]) {
     ApiNotFoundResponse({
       description: `${ type.name } not found`
     }),
-    ApiBadRequestResponse({ description: `Invalid identifier supplied` }),
+    ApiBadRequestResponse({ description: 'Invalid identifier supplied' }),
     UseInterceptors(ClassSerializerInterceptor)
   );
 }
