@@ -1,27 +1,18 @@
 import {
   Body,
-  ClassSerializerInterceptor,
   Controller,
-  Delete,
-  Get,
+  Logger,
   NotFoundException,
   Param,
-  Patch,
-  Post,
-  Put,
-  UseFilters,
-  UseInterceptors
+  UseFilters
 } from '@nestjs/common';
-import {
-  ApiCreatedResponse,
-  ApiNotFoundResponse,
-  ApiOkResponse,
-  ApiOperation,
-  ApiTags
-} from '@nestjs/swagger';
-import {
-  KbApiValidateErrorResponse
-} from 'src/kb-api-validation-error-response.decorator';
+import { ApiTags } from '@nestjs/swagger';
+import { GetAll } from 'src/decorators/get-all.decorator';
+import { GetOne } from 'src/decorators/get-one.decorator';
+import { KbDelete } from 'src/decorators/kb-delete.decorator';
+import { KbPatch } from 'src/decorators/kb-patch.decorator';
+import { KbPost } from 'src/decorators/kb-post.decorator';
+import { KbPut } from 'src/decorators/kb-put.decorator';
 import {
   KbValidationExceptionFilter
 } from 'src/kb-validation-exception.filter';
@@ -33,45 +24,47 @@ import { ProductService } from './product.service';
 @ApiTags('product')
 @UseFilters(new KbValidationExceptionFilter())
 export class ProductController {
+  private readonly logger = new Logger(ProductController.name);
+
   constructor(private readonly productService: ProductService) {}
 
-  @Get(':name')
-  @ApiOperation({ summary: 'Get an existing Product' })
-  @UseInterceptors(ClassSerializerInterceptor)
+  @GetAll(Product)
+  async getAllProducts() {
+    const productsDB = await this.productService.findAllAsync();
+    const products = productsDB
+      .map((productDb) => new Product(productDb.toObject()));
+
+    return products;
+  }
+
+  @GetOne(Product, ':name')
   async getProduct(@Param('name') name: string) {
     const product = await this.productService.findByName(name);
 
+    if (!product) {
+      throw new NotFoundException(`Product with name ${ name } not found`);
+    }
+
     // will show secret fields as well!
+    this.logger.log('Full Product');
+    // will log only public fields!
+    this.logger.log(product);
+    // DANGER! will log everything!
     console.log(product);
 
     // will only include exposed fields
     return product;
   }
 
-  @Post()
-  @ApiOperation({ summary: 'Create a Product' })
-  @ApiCreatedResponse({
-    description: 'The Product has been successfully created.',
-    type: Product
-  })
-  @KbApiValidateErrorResponse()
-  @UseInterceptors(ClassSerializerInterceptor)
+  @KbPost(Product)
   async createProduct(@Body() item: Product) {
 
     const product = await this.productService.create(item);
-    // const product = new Product(persistedProduct.toObject());
 
     return product
   }
 
-  @Patch(':name')
-  @ApiOperation({ summary: 'Update a Product. expects a partial Product' })
-  @ApiOkResponse({ type: Product, description: 'Product updated' })
-  @KbApiValidateErrorResponse()
-  @ApiNotFoundResponse({
-    description: 'Product not found'
-  })
-  @UseInterceptors(ClassSerializerInterceptor)
+  @KbPatch(Product, ':name')
   async changeProduct(
     @Param('name') name: string,
     @Body() changes: Product
@@ -90,13 +83,7 @@ export class ProductController {
     return product.toObject();
   }
 
-  @Put(':name')
-  @ApiOperation({ summary: 'Replace a Product. expects a full Product' })
-  @KbApiValidateErrorResponse()
-  @ApiNotFoundResponse({
-    description: 'Product not found'
-  })
-  @UseInterceptors(ClassSerializerInterceptor)
+  @KbPut(Product, ':name')
   async changeProduct2(
     @Param('name') name: string,
     @Body() changes: Product
@@ -110,15 +97,13 @@ export class ProductController {
     return product.toObject();
   }
 
-  @Delete(':name')
-  @ApiOperation({ summary: 'Delete an existing product' })
-  @UseInterceptors(ClassSerializerInterceptor)
+  @KbDelete(Product, ':name')
   async deleteProduct(@Param('name') name: string) {
     const product = await this.productService.deleteAsync({ name });
 
     const parsed = new Product(product.toObject());
 
-    console.log(parsed);
+    this.logger.log(parsed);
 
     // will only include exposed fields
     return parsed;
