@@ -16,6 +16,11 @@ export class ProductService extends BaseService<Product> {
 
   async findByName(name: string): Promise<Product> {
     const dbProduct = await this.findOne({ name }).exec();
+
+    if (!dbProduct) {
+      return;
+    }
+
     return new Product(dbProduct.toObject());
   }
 }
