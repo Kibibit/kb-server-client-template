@@ -19,6 +19,7 @@ module.exports = {
     'eol-last': [ 2, 'windows' ],
     'comma-dangle': [ 'error', 'never' ],
     'max-len': [ 'error', { 'code': 80, "ignoreComments": true } ],
+    'quotes': ["error", "single"],
     '@typescript-eslint/no-empty-interface': 'error',
     '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
