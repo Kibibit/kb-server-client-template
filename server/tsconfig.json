@@ -11,9 +11,10 @@
     "outDir": "../dist/server",
     "baseUrl": "./",
     "paths": {
-      "@kb-server": ["src/*"],
-      "@kb-models": ["src/models/index"],
-      "@kb-abstracts": ["src/abstracts/index"]
+      "@kb-server": [ "src/*" ],
+      "@kb-models": [ "src/models/index" ],
+      "@kb-abstracts": [ "src/abstracts/index" ],
+      "@kb-api": [ "src/api/index" ]
       
     },
     "incremental": true,
