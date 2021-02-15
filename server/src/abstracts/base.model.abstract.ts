@@ -1,5 +1,5 @@
 import { buildSchema, prop as PersistInDb } from '@typegoose/typegoose';
-import { classToPlain, Exclude, Expose, Transform } from 'class-transformer';
+import { classToPlain, Exclude, Expose } from 'class-transformer';
 import { Schema } from 'mongoose';
 
 @Exclude()
@@ -10,8 +10,8 @@ export abstract class BaseModel {
   @PersistInDb()
   updatedDate?: Date; // provided by timestamps
 
-  @Expose({ name: 'id' })
-  @Transform(({ value }) => value && value.toString())
+  // @Expose({ name: 'id' })
+  // @Transform(({ value }) => value && value.toString())
   // tslint:disable-next-line: variable-name
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   _id?: any;
