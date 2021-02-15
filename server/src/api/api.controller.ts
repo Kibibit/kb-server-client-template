@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Logger } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation } from '@nestjs/swagger';
 import { readJSON } from 'fs-extra';
 import { chain } from 'lodash';
@@ -9,6 +9,8 @@ import { ApiInfo } from '../models/api.model';
 @Controller('api')
 export class ApiController {
   appRoot = join(__dirname, '../../../');
+
+  private readonly logger = new Logger(ApiController.name);
 
   @Get()
   @ApiOperation({ summary: 'Get API Information' })
@@ -32,7 +34,7 @@ export class ApiController {
       .mapValues((val) => val.url ? val.url : val)
       .value()
     );
-    console.log('GET API!');
+    this.logger.log('Api information requested');
     return details;
   }
 
@@ -40,7 +42,7 @@ export class ApiController {
   @ApiOperation({
     deprecated: true
   })
-  deprecationTest() {
-    return 'hello';
+  async deprecationTest() {
+    return new Promise((resolve) => setTimeout(() => resolve('hello'), 60000));
   }
 }
