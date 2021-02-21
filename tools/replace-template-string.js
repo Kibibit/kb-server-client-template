@@ -43,6 +43,7 @@ const packageLockFile = {
     results.push(await replace(readmeFile));
     results.push(await replace(packageFile));
     results.push(await replace(packageLockFile));
+    results.push(await replace(contributorsFile));
     console.log('Replacement results:', results);
   }
   catch (error) {
