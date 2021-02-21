@@ -17,6 +17,12 @@ const readmeFile = {
   to: projectName,
 };
 
+const contributorsFile = {
+  files: './.all-contributorsrc',
+  from: /kb-server-client-template/g,
+  to: projectName,
+};
+
 const packageFile = {
   files: './package.json',
   from: /kb-server-client-template/g,
