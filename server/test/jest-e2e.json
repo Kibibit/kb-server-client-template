@@ -6,12 +6,18 @@
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
   },
+  "setupFilesAfterEnv": [
+    "../test-tools/jest.setup.ts"
+  ],
   "moduleNameMapper": {
     "^@kb-server$": "<rootDir>/../src",
-    "^@kb-models$": "<rootDir>/../src/../src/models/index",
+    "^@kb-models$": "<rootDir>/../src/models/index",
     "^@kb-abstracts$": "<rootDir>/../src/abstracts/index",
     "^@kb-decorators$": "<rootDir>/../src/decorators/index",
     "^@kb-filters$": "<rootDir>/../src/filters/index",
-    "^@kb-api$": "<rootDir>/../src/api/index"
+    "^@kb-api$": "<rootDir>/../src/api/index",
+    "^@kb-events$": "<rootDir>/../src/events/index",
+    "^@kb-app$": "<rootDir>/../src/app/index",
+    "^@kb-tasks": "<rootDir>/../src/tasks/index"
   }
 }

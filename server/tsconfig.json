@@ -17,6 +17,8 @@
       "@kb-abstracts": [ "src/abstracts/index" ],
       "@kb-decorators": [ "src/decorators/index" ],
       "@kb-filters": [ "src/filters/index" ],
+      "@kb-events": [ "src/events/index" ],
+      "@kb-tasks": [ "src/tasks/index" ],
       "@kb-app": [ "src/app/index" ],
       "@kb-api": [ "src/api/index" ]
       
