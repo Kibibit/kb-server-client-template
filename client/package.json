@@ -7,12 +7,14 @@
     "start:proxy": "ng serve --port 10101 --proxy-config ./proxy.conf.json --poll=2000",
     "build": "ng build",
     "test:watch": "ng test",
-    "test": "ng test --no-watch --browsers ChromeHeadless",
-    "test:cov": "ng test --no-watch --code-coverage --browsers ChromeHeadless",
+    "test": "ng test --no-watch --browsers Chrome_without_sandbox",
+    "test:cov": "ng test --no-watch --code-coverage --browsers Chrome_without_sandbox",
+    "test:headed": "ng test --no-watch --code-coverage --browsers=Chrome",
     "lint": "ng lint",
     "lint:fix": "ng lint client --fix",
     "lint:html": "prettyhtml ./src/**/*.html --tab-width 2 --print-width 80 --wrapAttributes true --sortAttributes",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "e2e:headed": "ng e2e --browsers Chrome"
   },
   "private": true,
   "dependencies": {
