@@ -75,6 +75,28 @@
     10102, // dev server
     27017 // mongodb instance
   ],
+  "portsAttributes": {
+    "10101": {
+      "label": "Client",
+      "onAutoForward": "notify"
+    },
+    "10102": {
+      "label": "Server",
+      "onAutoForward": "notify"
+    },
+    "27017": {
+      "label": "MongoDB",
+      "onAutoForward": "notify"
+    },
+    "9876": {
+      "label": "TESTS: Client Unit Tests",
+      "onAutoForward": "notify"
+    },
+    "4200": {
+      "label": "TESTS: Client E2E",
+      "onAutoForward": "notify"
+    },
+  },
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
