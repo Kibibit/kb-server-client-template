@@ -8,6 +8,7 @@
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
+    "esModuleInterop": true,
     "outDir": "../dist/server",
     "baseUrl": "./",
     "paths": {
@@ -16,6 +17,7 @@
       "@kb-abstracts": [ "src/abstracts/index" ],
       "@kb-decorators": [ "src/decorators/index" ],
       "@kb-filters": [ "src/filters/index" ],
+      "@kb-app": [ "src/app/index" ],
       "@kb-api": [ "src/api/index" ]
       
     },

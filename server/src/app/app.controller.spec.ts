@@ -1,8 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { mockResponse } from 'jest-mock-req-res';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController, AppService } from '@kb-app';
 
 describe('AppController', () => {
   let appController: AppController;

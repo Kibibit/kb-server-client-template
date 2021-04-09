@@ -1,4 +1,4 @@
-import { KbNotFoundExceptionFilter } from './kb-not-found-exception.filter';
+import { KbNotFoundExceptionFilter } from '@kb-filters';
 
 describe('NotFoundExceptionFilterFilter', () => {
   it('should be defined', () => {

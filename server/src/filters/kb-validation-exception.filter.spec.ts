@@ -1,4 +1,4 @@
-import { KbValidationExceptionFilter } from './kb-validation-exception.filter';
+import { KbValidationExceptionFilter } from '@kb-filters';
 
 describe('KbValidationExceptionFilter', () => {
   it('should be defined', () => {

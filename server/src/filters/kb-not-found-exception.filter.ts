@@ -4,10 +4,12 @@ import {
   ExceptionFilter,
   NotFoundException
 } from '@nestjs/common';
-import { resolve } from 'path';
+import { join } from 'path';
 
 @Catch(NotFoundException)
 export class KbNotFoundExceptionFilter implements ExceptionFilter {
+  constructor(private readonly appRoot: string) {}
+
   catch(exception: NotFoundException, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
@@ -24,6 +26,8 @@ export class KbNotFoundExceptionFilter implements ExceptionFilter {
       return;
     }
 
-    response.sendFile(resolve('./dist/client/index.html'));
+    response.sendFile(
+      join(this.appRoot, './dist/client/index.html')
+    );
   }
 }

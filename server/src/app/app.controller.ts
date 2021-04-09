@@ -7,7 +7,6 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  appRoot = join(__dirname, '../../');
   constructor(private readonly appService: AppService) {}
 
   @Get()
@@ -16,6 +15,6 @@ export class AppController {
     description: 'Returns the Web Client\'s HTML File'
   })
   sendWebClient(@Res() res: Response): void {
-    res.sendFile(join(this.appRoot, 'dist/client/index.html'));
+    res.sendFile(join(this.appService.appRoot, '/dist/client/index.html'));
   }
 }

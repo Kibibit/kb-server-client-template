@@ -4,10 +4,12 @@ import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 
+import { AppModule, AppService } from '@kb-app';
 import { KbNotFoundExceptionFilter } from '@kb-filters';
 
-import { AppModule } from './app.module';
 import { Swagger } from './swagger';
+
+const appRoot = new AppService().appRoot;
 
 export async function bootstrap(): Promise<NestExpressApplication> {
   terminalConsoleLogo('kibibit server template', [
@@ -16,7 +18,7 @@ export async function bootstrap(): Promise<NestExpressApplication> {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalFilters(new KbNotFoundExceptionFilter());
   app.useGlobalPipes(new ValidationPipe());
-  app.useStaticAssets(join(__dirname, '../client'));
+  app.useStaticAssets(join(appRoot, './dist/client'));
 
   await Swagger.addSwagger(app);
 

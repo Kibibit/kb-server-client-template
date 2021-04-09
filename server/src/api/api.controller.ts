@@ -4,11 +4,12 @@ import { readJSON } from 'fs-extra';
 import { chain } from 'lodash';
 import { join } from 'path';
 
+import { AppService } from '@kb-app';
 import { ApiInfo } from '@kb-models';
 
 @Controller('api')
 export class ApiController {
-  appRoot = join(__dirname, '../../../');
+  readonly appRoot = new AppService().appRoot;
 
   private readonly logger = new Logger(ApiController.name);
 
@@ -19,7 +20,9 @@ export class ApiController {
     type: ApiInfo
   })
   async getAPI() {
-    const packageInfo = await readJSON(join(this.appRoot, './package.json'));
+    const packageInfo = await readJSON(
+      join(this.appRoot, './package.json')
+    );
     const details = new ApiInfo(
       chain(packageInfo)
       .pick([
