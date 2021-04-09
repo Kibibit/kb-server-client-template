@@ -2,9 +2,8 @@ name: E2E Tests
 on:
   push:
     branches:
-      - dummy
-      # - master
-      # - next
+      - master
+      - next
 jobs:
   unittest:
     name: E2E Tests

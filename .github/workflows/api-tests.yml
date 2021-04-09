@@ -2,9 +2,8 @@ name: API Tests
 on:
   push:
     branches:
-      - dummy
-      # - master
-      # - next
+      - master
+      - next
 jobs:
   unittest:
     name: API Tests
