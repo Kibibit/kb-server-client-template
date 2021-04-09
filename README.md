@@ -9,6 +9,18 @@
   <a href="https://www.npmjs.com/package/@kibibit/kb-server-client-template"><img src="https://img.shields.io/npm/v/@kibibit/kb-server-client-template/latest.svg?style=for-the-badge&logo=npm&color=CB3837"></a>
 </p>
 <p align="center">
+<a href="https://github.com/Kibibit/kb-server-client-template/actions/workflows/server-unit-tests.yml">
+  <img src="https://github.com/Kibibit/kb-server-client-template/actions/workflows/server-unit-tests.yml/badge.svg?style=flat-square" alt="Server Unit Tests">
+</a>
+<a href="https://github.com/Kibibit/kb-server-client-template/actions/workflows/client-unit-tests.yml">
+  <img src="https://github.com/Kibibit/kb-server-client-template/actions/workflows/client-unit-tests.yml/badge.svg?style=flat-square" alt="Client Unit Tests">
+</a>
+<a href="https://github.com/Kibibit/kb-server-client-template/actions/workflows/api-tests.yml">
+  <img src="https://github.com/Kibibit/kb-server-client-template/actions/workflows/api-tests.yml/badge.svg?style=flat-square" alt="API Tests">
+</a>
+<a href="https://github.com/Kibibit/kb-server-client-template/actions/workflows/e2e-tests.yml">
+  <img src="https://github.com/Kibibit/kb-server-client-template/actions/workflows/e2e-tests.yml/badge.svg?style=flat-square" alt="E2E Tests">
+</a>
  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a href="#contributors-"><img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square" alt="All Contributors"></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
