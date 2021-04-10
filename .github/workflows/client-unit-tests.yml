@@ -1,5 +1,6 @@
 name: Client Unit Tests
 on:
+  workflow_dispatch:
   push:
     paths:
     - 'client/**'
