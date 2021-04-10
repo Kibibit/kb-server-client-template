@@ -4,6 +4,7 @@
   "description": "<DESCRIPTION>",
   "main": "dist/server/main.js",
   "scripts": {
+    "prune-branches": "node ./tools/scripts/prune-untrackted-branches.js",
     "contributors:all": "cross-env HUSKY_SKIP_HOOKS=1 node ./tools/get-all-contributors.js",
     "contributors:add": "cross-env HUSKY_SKIP_HOOKS=1 all-contributors add",
     "contributors:generate": "cross-env HUSKY_SKIP_HOOKS=1 all-contributors generate",
