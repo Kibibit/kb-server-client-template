@@ -97,6 +97,7 @@ const chars = {
 
       const result = await Promise.all(answers.pruneBranches.map((branchName) => git.deleteLocalBranch(branchName, true)));
       console.log('DONE');
+      console.log(result);
       chain(result.all)
         .map((item) => `${ item.branch }: ${ item.success ? 'DELETED' : 'FAILED' }`)
         .forEach((item) => console.log(item));
@@ -112,7 +113,7 @@ async function moveToAnotherBranchIfNeeded(branchSummaryResult, branchesToDelete
   const suspectedMainBranch = branchSummaryResult.all.find((branchName) => MAIN_BRANCHES.includes(branchName));
   const currentCheckedoutBranch = branchSummaryResult.current;
 
-  console.log('main branch:', suspectedMainBranch);
+  // console.log('main branch:', suspectedMainBranch);
 
   if (branchesToDelete.includes(currentCheckedoutBranch)) {
     console.warn(`trying to delete checkedout branch ${ currentCheckedoutBranch }. moving to ${ suspectedMainBranch }`);
