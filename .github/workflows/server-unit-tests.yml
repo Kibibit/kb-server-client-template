@@ -1,5 +1,6 @@
 name: Server Unit Tests
 on:
+  workflow_dispatch:
   push:
     paths:
     - 'server/**'
