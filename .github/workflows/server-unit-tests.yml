@@ -32,4 +32,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: server-unit-tests-code-coverage-report
-          path: coverage/server/lcov-report
+          path: coverage/server
+      - name: Code Coverage Report
+        uses: romeovs/lcov-reporter-action@v0.2.16
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          lcov-file: coverage/server/lcov.info
