@@ -70,8 +70,11 @@ const chars = {
     if (answers.whatToDo === ACTION_ANSWERS.PRUNE_ALL) {
       await moveToAnotherBranchIfNeeded(branchSummaryResult, branchNames);
 
-      await git.deleteLocalBranches(branchNames);
+      const result = await git.deleteLocalBranches(branchNames, true);
       console.log('DONE');
+      chain(result.all)
+        .map((item) => `${ item.branch }: ${ item.success ? 'DELETED' : 'FAILED' }`)
+        .forEach((item) => console.log(item));
       return;
     }
 
@@ -88,8 +91,11 @@ const chars = {
 
       await moveToAnotherBranchIfNeeded(branchSummaryResult, branchNames);
 
-      await Promise.all(answers.pruneBranches.map((branchName) => git.deleteLocalBranch(branchName)));
+      const result = await Promise.all(answers.pruneBranches.map((branchName) => git.deleteLocalBranch(branchName, true)));
       console.log('DONE');
+      chain(result.all)
+        .map((item) => `${ item.branch }: ${ item.success ? 'DELETED' : 'FAILED' }`)
+        .forEach((item) => console.log(item));
       return;
     }
   } catch (err) {
