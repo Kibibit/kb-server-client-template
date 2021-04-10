@@ -29,6 +29,7 @@
       },
       "options": {
         "statusbar": {
+          "hide": true,
           "color": "#35AC5E"
         }
       }
@@ -46,6 +47,7 @@
       },
       "options": {
         "statusbar": {
+          "hide": true,
           "color": "#35AC5E"
         }
       }
@@ -68,8 +70,23 @@
       "script": "test:cov",
       "path": "server/",
       "problemMatcher": [],
-      "label": "TESTS: Server Unit-tests and Coverage",
-      "detail": "Run Server unit-tests",
+      "label": "TESTS: Server",
+      "detail": "Run Server Unit-tests and Coverage",
+      "options": {
+        "statusbar": {
+          "color": "#FFDD57"
+        }
+      }
+    },
+    {
+      "type": "npm",
+      "script": "test:cov",
+      "path": "client/",
+      "group": "test",
+      "label": "TEST: Client",
+      "detail": "Run Client Unit-tests and Coverage",
+      "isBackground": true,
+      "problemMatcher": "$karma-jasmine2",
       "options": {
         "statusbar": {
           "color": "#FFDD57"
@@ -81,7 +98,7 @@
       "script": "test:e2e",
       "path": "server/",
       "problemMatcher": [],
-      "label": "TESTS: API-tests",
+      "label": "TESTS: API",
       "detail": "Run API Tests (server e2e)",
       "options": {
         "statusbar": {
@@ -94,7 +111,7 @@
       "script": "e2e",
       "path": "client/",
       "problemMatcher": [],
-      "label": "TESTS: E2E-tests",
+      "label": "TESTS: E2E",
       "detail": "Run E2E tests (client e2e. includes HTML interaction)",
       "options": {
         "statusbar": {
@@ -102,20 +119,6 @@
         }
       }
     },
-    {
-      "type": "npm",
-      "script": "test:cov",
-      "path": "client/",
-      "group": "test",
-      "label": "TEST: Client Unit-tests and Coverage",
-      "detail": "Run client unit-tests",
-      "isBackground": true,
-      "problemMatcher": "$karma-jasmine2",
-      "options": {
-        "statusbar": {
-          "color": "#FFDD57"
-        }
-      }
-    }
+    
   ]
 }
