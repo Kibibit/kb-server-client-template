@@ -3,7 +3,12 @@ const { chain, trim, map } = require('lodash');
 const inquirer = require('inquirer');
 const Table = require('cli-table');
 
+const git = simpleGit();
 const remoteInfoRegex = /^\[(.*?)\]\s/g;
+const MAIN_BRANCHES = [
+  'master',
+  'main'
+];
 
 const chars = {
   'top': '═', 'top-mid': '╤', 'top-left': '╔', 'top-right': '╗'
@@ -14,12 +19,12 @@ const chars = {
 
 (async () => {
   try {
-    const git = simpleGit();
     await git.fetch(['-p']); // prune? is it necassery?
     const branchSummaryResult = await git.branch(['-vv']);
+    console.log(branchSummaryResult);
     const localBranches = branchSummaryResult.branches;
     const localBranchesWithGoneRemotes = chain(localBranches)
-      .filter((item) => !['master', 'next'].includes(item.name))
+      .filter((item) => !MAIN_BRANCHES.includes(item.name))
       .forEach((item) => {
         // console.log('an item appeared!', item);
         const remoteInfo = item.label.match(remoteInfoRegex);
@@ -63,6 +68,8 @@ const chars = {
       ]);
 
     if (answers.whatToDo === ACTION_ANSWERS.PRUNE_ALL) {
+      await moveToAnotherBranchIfNeeded(branchSummaryResult, branchNames);
+
       await git.deleteLocalBranches(branchNames);
       console.log('DONE');
       return;
@@ -79,6 +86,8 @@ const chars = {
           }
         ]);
 
+      await moveToAnotherBranchIfNeeded(branchSummaryResult, branchNames);
+
       await Promise.all(answers.pruneBranches.map((branchName) => git.deleteLocalBranch(branchName)));
       console.log('DONE');
       return;
@@ -88,3 +97,15 @@ const chars = {
     process.exit(1);
   }
 })();
+
+async function moveToAnotherBranchIfNeeded(branchSummaryResult, branchesToDelete) {
+  const suspectedMainBranch = branchSummaryResult.all.find((branchName) => MAIN_BRANCHES.includes(branchName));
+  const currentCheckedoutBranch = branchSummaryResult.current;
+
+  console.log('main branch:', suspectedMainBranch);
+
+  if (branchesToDelete.includes(currentCheckedoutBranch)) {
+    console.warn(`trying to delete checkedout branch ${ currentCheckedoutBranch }. moving to ${ suspectedMainBranch }`);
+    await git.checkout(suspectedMainBranch);
+  }
+}
