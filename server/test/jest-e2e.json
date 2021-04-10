@@ -9,6 +9,21 @@
   "setupFilesAfterEnv": [
     "../test-tools/jest.setup.ts"
   ],
+  "coverageDirectory": "../../test-results/api/coverage",
+  "reporters": [
+    "default",
+    [
+      "jest-stare",
+      {
+        "resultDir": "../test-results/api",
+        "reportTitle": "jest-stare!",
+        "additionalResultsProcessors": [
+          "jest-junit"
+        ],
+        "coverageLink": "./coverage/lcov-report/index.html"
+      }
+    ]
+  ],
   "moduleNameMapper": {
     "^@kb-server$": "<rootDir>/../src",
     "^@kb-models$": "<rootDir>/../src/models/index",

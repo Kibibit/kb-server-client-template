@@ -11,7 +11,8 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma'),
-      require('karma-spec-reporter')
+      require('karma-spec-reporter'),
+      require('karma-htmlfile-reporter')
     ],
     client: {
       captureConsole: false,
@@ -27,15 +28,26 @@ module.exports = function (config) {
     // },
     coverageReporter: {
       // type : 'html',
-      dir : '../coverage/client',
+      dir : '../test-results/client/coverage',
       reporters: [
-        { type: 'lcov', subdir: 'report-html' },
-        { type: 'html', subdir: 'report-lcov' }
+        { type: 'lcov', subdir: 'report-lcov' },
+        { type: 'html', subdir: 'report-html' }
       ],
       fixWebpackSourcePaths: true
     },
     
-    reporters: ['spec', 'kjhtml'],
+    reporters: ['spec', 'html'],
+    htmlReporter: {
+      outputFile: '../test-results/client/index.html',
+			
+      // Optional
+      pageTitle: 'Client-Side Unit Tests',
+      subPageTitle: 'A summary of test results',
+      groupSuites: true,
+      useCompactStyle: true,
+      useLegacyStyle: true,
+      showOnlyFailed: false
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

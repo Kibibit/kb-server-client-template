@@ -28,13 +28,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run test:server-unit
-      - name: Archive code coverage results
+      - name: Archive test results & coverage
         uses: actions/upload-artifact@v2
         with:
           name: server-unit-tests-code-coverage-report
-          path: coverage/server
-      - name: Code Coverage Report
-        uses: romeovs/lcov-reporter-action@v0.2.16
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          lcov-file: coverage/server/lcov.info
+          path: test-results/server
+      # - name: Code Coverage Report
+      #   uses: romeovs/lcov-reporter-action@v0.2.16
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     lcov-file: coverage/server/lcov.info

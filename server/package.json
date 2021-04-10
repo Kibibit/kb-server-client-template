@@ -71,7 +71,21 @@
       "!**/index.ts",
       "!**/*.module.ts"
     ],
-    "coverageDirectory": "../../coverage/server",
+    "reporters": [
+      "default",
+      [
+        "jest-stare",
+        {
+          "resultDir": "../test-results/server",
+          "reportTitle": "jest-stare!",
+          "additionalResultsProcessors": [
+            "jest-junit"
+          ],
+          "coverageLink": "./coverage/lcov-report/index.html"
+        }
+      ]
+    ],
+    "coverageDirectory": "../../test-results/server/coverage",
     "testEnvironment": "node",
     "moduleNameMapper": {
       "^@kb-server$": "<rootDir>",

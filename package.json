@@ -50,6 +50,8 @@
     "gitlog": "^4.0.4",
     "husky": "^4.3.8",
     "inquirer": "^8.0.0",
+    "jest-stare": "^2.2.1",
+    "karma-htmlfile-reporter": "^0.3.8",
     "ncp": "^2.0.0",
     "package-name-regex": "^1.0.11",
     "replace-in-file": "^6.2.0",
