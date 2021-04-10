@@ -27,3 +27,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm run test:server-unit
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: server-unit-tests-code-coverage-report
+          path: coverage/server/lcov-report
