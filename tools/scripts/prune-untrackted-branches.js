@@ -21,7 +21,6 @@ const chars = {
   try {
     await git.fetch(['-p']); // prune? is it necassery?
     const branchSummaryResult = await git.branch(['-vv']);
-    console.log(branchSummaryResult);
     const localBranches = branchSummaryResult.branches;
     const localBranchesWithGoneRemotes = chain(localBranches)
       .filter((item) => !MAIN_BRANCHES.includes(item.name))
@@ -41,6 +40,11 @@ const chars = {
       .filter((item) => item.isMerged)
       .value();
     const branchNames = chain(localBranchesWithGoneRemotes).map('name').value();
+
+    if (!branchNames.length) {
+      console.log('PROJECT IS CLEAN! WELL DONE!');
+      process.exit(0);
+    }
 
     // interaction!
     const table = new Table({
