@@ -2,6 +2,8 @@ name: E2E Tests
 on:
   workflow_dispatch:
   pull_request:
+    paths:
+    - 'client/**'
   push:
     branches:
       - master
@@ -11,7 +13,7 @@ jobs:
     name: E2E Tests
     runs-on: ubuntu-18.04
     steps:
-      - name: Checkout commit
+      - name: Checkout Commit
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -23,11 +25,12 @@ jobs:
         uses: supercharge/mongodb-github-action@1.3.0
         with:
           mongodb-version: 4.2
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
           npm ci
           npm install
-          npm run build
+      - name: Build
+        run: npm run build --if-present
       - name: Run E2E Tests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
