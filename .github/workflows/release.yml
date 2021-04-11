@@ -10,7 +10,7 @@ jobs:
     name: Release
     runs-on: ubuntu-18.04
     steps:
-      - name: Checkout
+      - name: Checkout commit
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
